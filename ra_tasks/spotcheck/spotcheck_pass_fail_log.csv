@@ -1,0 +1,35 @@
+spotcheck_id,table_row_id,evidence_id,reviewer,review_date,pass_fail,notes
+sc_chk_001,t1_001,ev_0001,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 2.0.
+sc_chk_002,t1_002,ev_0004,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 9.0.
+sc_chk_003,t1_003,ev_0005,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 9.0.
+sc_chk_004,t1_004,ev_0006,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 9.0.
+sc_chk_005,t1_005,ev_0012,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 9.0.
+sc_chk_006,t1_006,ev_0013,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 9.0.
+sc_chk_007,t1_007,ev_0014,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 10.0.
+sc_chk_008,t1_008,ev_0015,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 5.0.
+sc_chk_009,t1_009,ev_0018,Codex local source audit,2026-06-29,pass,"CORRECTED 2026-06-29: descriptive facility headcount, not causal ATT. Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 7.0."
+sc_chk_010,t1_010,ev_0020,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. No page number in source queue; source quote/source URL retained for traceability.
+sc_chk_011,t1_011,ev_0025,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 1.0.
+sc_chk_012,t1_012,ev_0027,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 3.0.
+sc_chk_013,t1_013,ev_0029,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 10.0.
+sc_chk_014,t1_014,ev_0047,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 5.0.
+sc_chk_015,t1_015,ev_0048,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 6.0.
+sc_chk_016,t1_016,ev_0051,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 9.0.
+sc_chk_017,t1_017,ev_0053,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. No page number in source queue; source quote/source URL retained for traceability.
+sc_chk_018,t1_018,ev_0054,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. No page number in source queue; source quote/source URL retained for traceability.
+sc_chk_019,t1_019,ev_0055,Codex local source audit,2026-06-29,pass,"CORRECTED 2026-06-29: Tesla Gigafactory tax-incentive example, not DC build duration. Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 2.0."
+sc_chk_020,t1_020,ev_0057,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 6.0.
+sc_chk_021,t1_021,ev_0058,Codex local source audit,2026-06-29,pass,"CORRECTED 2026-06-29: 874 MW planned capacity, not investment scale. Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 6.0."
+sc_chk_022,t1_022,ev_0059,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: 6.0.
+sc_chk_023,t1_023,ev_0072,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: 25.0.
+sc_chk_024,t1_024,ev_0084,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. No page number in source queue; source quote/source URL retained for traceability.
+sc_chk_025,t1_025,ev_0085,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 2.
+sc_chk_026,t1_026,ev_0086,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 8.
+sc_chk_027,t1_027,ev_0088,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Source location: page 7.
+sc_chk_028,t1_028,ev_0089,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Use with stated caveat/provenance label. Duplicate/secondary framing; consolidate in prose/table rather than headline alone. Source location: page 7.
+sc_chk_029,t1_029,ev_0090,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 13.
+sc_chk_030,t1_030,ev_0091,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 5.
+sc_chk_031,t1_031,ev_0092,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 5.
+sc_chk_032,t1_032,ev_0094,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 11.
+sc_chk_033,t1_033,ev_0095,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Source location: page 11.
+sc_chk_034,t1_034,ev_0096,Codex local source audit,2026-06-29,pass,Verified against source-context quote in comparative_evidence_primary_table.csv. Duplicate/secondary framing; consolidate in prose/table rather than headline alone. Source location: page 5.

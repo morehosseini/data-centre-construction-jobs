@@ -1,0 +1,19 @@
+evidence_id,action,kept_evidence_id,reason
+ev_0011,drop_duplicate,ev_0004,Exact duplicate of ev_0004.
+ev_0010,drop_duplicate,ev_0005,Exact duplicate of ev_0005.
+ev_0009,drop_duplicate,ev_0006,Exact duplicate of ev_0006.
+ev_0019,drop_duplicate,ev_0018,Exact duplicate of ev_0018.
+ev_0003,drop_duplicate,ev_0001,Exact duplicate of ev_0001.
+ev_0049,drop_duplicate,ev_0020,Exact duplicate of ev_0020.
+ev_0043,quarantine,,"Alvarez NBER Table 1 'Summary statistics': 0.858 is the Std. dev. of %Δ employment (Obs 3,173, Mean 0.212), NOT a causal effect. Re-extract the treatment-effect/DiD coefficients."
+ev_0044,quarantine,,Alvarez NBER summary-stat Std. dev. of %Δ data-processing employment (1.627); not a causal effect.
+ev_0045,quarantine,,Alvarez NBER summary-stat Std. dev. of %Δ construction employment (1.530); not a causal effect.
+ev_0046,quarantine,,Alvarez NBER summary-stat Std. dev. (1.039); not a causal effect.
+ev_0052,quarantine,,"Yue & Zeng: '5' is a fragment from the CS-DID heterogeneity table header, not a clean effect size."
+ev_0060,quarantine,,"NSW submission: '4' relates to apprenticeship/licensing text, not investment scale. Mis-extracted."
+ev_0061,quarantine,,NSW submission: '3' = 'past 3 years' (DC investment grew ~65%/yr; ~12% of non-residential). Value '3' mis-extracted; recover the 65%/12% figures on re-extraction.
+ev_0073,quarantine,,Gargano & Giacoletti: '150' is a fragment from the tax-incentive legislation table; not an employment effect.
+ev_0074,quarantine,,Gargano & Giacoletti: '120' is a fragment from the tax-incentive legislation table; not an employment effect.
+ev_0093,quarantine,,Comparator (Putting renewables to work): explicit placeholder (0.15 job-years/GWh) and a duplicate of ev_0091; not citable.
+ev_0068,reclassify_to_scale_context,,"Growth in construction work VALUE, not jobs. Do not present as an employment effect."
+ev_0071,reclassify_to_scale_context,,"Cost CAGR, not jobs. Do not present as an employment effect."

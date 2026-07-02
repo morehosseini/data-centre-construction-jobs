@@ -1,0 +1,15 @@
+{
+  "created": "2026-07-01T14:36:41.497442",
+  "python": "3.12.12 (main, Oct  9 2025, 11:07:00) [Clang 17.0.0 (clang-1700.3.19.1)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "package_versions": {
+    "google-genai": "2.10.0",
+    "bibtexparser": "1.4.4",
+    "rispy": "0.10.0",
+    "pypdf": "6.7.0",
+    "requests": "2.32.5",
+    "python-dotenv": "1.2.1"
+  },
+  "run_tag": "run_20260701_143537",
+  "out_dir": "deep_search_runs/run_20260701_143537"
+}

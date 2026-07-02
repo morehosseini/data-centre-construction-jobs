@@ -1,0 +1,42 @@
+# Secrets / credentials — never commit
+.env
+*.env
+.env.*
+**/secrets/
+*secret*
+*.key
+*.pem
+id_rsa*
+GITHUB_TOKEN*
+GEMINI_API_KEY*
+
+# Python / notebooks
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.code-workspace
+
+# Local history, backups, superseded material
+_local_history/
+_backups_*/
+_discarded_partial_runs/
+_superseded/
+*.bak
+*.dup
+
+# Bulky / redundant artifacts (kept locally, not published)
+*.zip
+deep_search_outputs/
+source_pdfs/
+
+# Unsubmitted manuscript draft (excluded pre-submission)
+*.docx
+manuscript_v*_extracted.md

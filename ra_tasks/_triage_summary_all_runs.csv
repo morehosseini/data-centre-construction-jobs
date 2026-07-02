@@ -1,0 +1,8 @@
+run,label,unique_sources,include_for_RA,ra_rows,high,verified_csv,datasets_csv
+run_20260701_071034,00_SUPPLEMENTAL,363,187,90,59,298,63
+run_20260701_143537,01_WP_A_DC_only,301,190,90,88,243,58
+run_20260701_193500,02_WP_B_warehousing,365,195,90,57,301,57
+run_20260702_065516,03_WP_C_gigafactory,351,203,90,53,290,54
+run_20260702_133630,04_WP_GHJ_localness,351,175,90,53,281,60
+run_20260702_171638,05_WP_DE_social_infra,347,194,90,70,286,54
+run_20260702_202538,06_WP_FI_energy_prefab,359,281,90,108,297,58
