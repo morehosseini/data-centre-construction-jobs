@@ -217,7 +217,11 @@ completeness but should feed the DC metric-review track, not the comparator tabl
 | `07_prepare_manuscript_tables_and_figures.ipynb` | Manuscript tables + Figures 1–2 |
 | `08_correct_and_rebuild_manuscript_evidence_table.ipynb` | Correction pass → corrected 34-row base (§3.7) |
 
-Regeneration order for the manuscript outputs: **08 → 06 → 07**.
+Regeneration order for the manuscript outputs: **06 → 07 → 08** (06 builds the master evidence
+table from reviewed inputs; 07 turns it into the manuscript table/figure files; 08 applies the
+corrections register to 07's outputs in place). Figures are then drawn by
+`10_redraw_figures_expanded_20260703.py` and submission metadata re-applied by
+`11_postprocess_submission_metadata_20260703.py` (see §9).
 
 ---
 
@@ -247,3 +251,141 @@ Regeneration order for the manuscript outputs: **08 → 06 → 07**.
    regenerate figures via `07`.
 3. Apply the yield-bar test before any new comparator class is added to a finding.
 4. Update manuscript §3.3, Table 1 and the Data-availability statement using the text in §4.
+
+---
+
+## 8. Verification pass results and gap outcomes (2026-07-03)
+
+The triage workbooks were merged into a single master queue of **445 unique candidate sources**
+(`triage_outputs/MASTER_RA_verification_queue.xlsx`) and hand-verified. Outcome: **11 verified,
+434 rejected, 0 needs_source**. Every row records `reports_usable_metric`, `verification_status`
+and a coder ID; each verified row carries metric, unit, phase, job scope, denominator, page/table
+and a verbatim quote. The 97% rejection rate reflects the deliberately over-collected OpenAlex
+harvest; two high-priority government rows were correctly rejected (macro spending multipliers;
+RIMS II method, no facility metric). A cleaned shortlist is in
+`triage_outputs/verified_for_coding.{xlsx,csv}`.
+
+### 8.1 Corrections applied before coding (audit trail)
+- **Deduplication:** two "new" verified sources were already in the 34-row base
+  (`cmp_src_0003` Wei/Kammen; `cmp_src_0002` Garrett-Peltier) — retained as confirmation, not
+  re-added.
+- **Reclassification:** the 0.7–2.0 workers/MW row is a data-centre benchmark, routed to the DC
+  track, not the comparator table.
+- **Normalisation:** Nevada/Tesla (project-total person-years; needs capex for job-years/$M) and
+  Faraday (recoded to jobs per GWh); GlobalFoundries flagged to confirm peak-vs-total headcount.
+- **needs_source resolution (web audit):** NIST/DOC CHIPS figures are blended
+  construction+manufacturing aggregates → background only; Linesight is a qualitative off-site/MEP
+  source echoing the Hamm figure → narrative only.
+
+### 8.2 Gap scorecard against the work-package plan (A–J)
+- **Met:** advanced manufacturing / gigafactory / semiconductor (WP C — GlobalFoundries, BlueOval
+  SK, Nevada/Tesla, Faraday); renewable energy (WP F — Cameron & van der Zwaan, AEMO/UTS, plus two
+  pre-existing base sources).
+- **Resolved:** the "10 jobs/MW" rule (WP supplemental) screened and rejected as a DC coefficient.
+- **Partial (below yield bar):** warehousing/fulfilment (WP B — Prologis only, one source);
+  per-dollar comparator anchors (Minnesota 3.93 jobs/$M, Garrett-Peltier 7.49).
+- **Open:** social infrastructure (WP D+E), localness/incentives/realised jobs (WP G+H+J),
+  quantified off-site prefabrication (WP I); and the **data-centre jobs-per-dollar anchor
+  (WP A, P0)**, addressed by derivation in §8.3.
+
+### 8.3 Derivation of data-centre jobs per dollar (Work Package A)
+Because no directly reported DC jobs-per-$ figure passed verification, the metric was **derived**
+from cited facility-level figures and cross-checked two independent ways
+(`notebooks/09_derive_dc_jobs_per_dollar.ipynb`; outputs in `supplementary/dc_jobs_per_dollar_*`).
+
+Ready-to-insert manuscript text:
+
+> **Data-centre jobs per dollar of investment.** Because no primary source reported a directly
+> usable data-centre jobs-per-dollar coefficient with a transparent basis, this metric was derived
+> from facility-level projects that disclose both capacity and investment alongside construction or
+> operations headcount (Ryu and Hiatt, 2025, Appendix A1), and cross-checked against a
+> capacity-bridged estimate (workers per MW ÷ capital cost per MW). Data-centre projects support on
+> the order of 0.5 peak construction workers per US$1 million of total project investment (range
+> ≈0.2–0.7; two routes concordant) and ≈0.1 permanent operations jobs per US$1 million (range
+> ≈0.05–0.17). The denominator is total project investment — which is dominated by imported IT,
+> power and cooling equipment rather than on-site labour — so construction-only intensities would be
+> roughly double. For comparison, general construction activity supports about 3.93 jobs per US$1
+> million of construction output (Minnesota Legislative Budget Office). A dollar invested in a data
+> centre therefore yields materially fewer local construction jobs than the same dollar spent on
+> conventional construction or social infrastructure, and the permanent per-dollar footprint is
+> roughly five times smaller again — the equal-investment corollary of the employment cliff.
+
+Caveats to state: total-investment (not construction-only) denominator; construction = peak
+headcount vs operations = permanent FTE (not summed); the construction figure leans on one clean
+project plus the MW bridge; and the input pages require human confirmation against the primary PDF
+before citation. Present as a bounded range, not a point estimate.
+
+### 8.4 Remaining limitations to declare in v10
+Warehousing rests on a single source; social infrastructure, localness/incentives, and quantified
+off-site labour did not yield citable metrics and remain future work; the DC jobs-per-dollar figure
+is a derived, provenance-logged range pending primary-source page confirmation.
+**Update 2026-07-03:** page confirmation completed — all four Hamm Appendix A1 project figures
+verified verbatim at printed p.8–9 (PDF p.9–10); the 0.7–2.0 workers/MW benchmark at printed p.1
+(PDF p.2) and the A2 size-bucket table at printed p.10 (PDF p.11).
+
+---
+
+## 9. Integration of verified evidence into the manuscript build (2026-07-03)
+
+The verified rows from §8 were coded into the evidence pipeline and the manuscript outputs
+rebuilt. Record of exactly what was done:
+
+### 9.1 Verification completed before coding
+- **Hamm page gate (human check):** all derivation inputs verified against
+  `source_pdfs/Hamm_Institute_2025_Data_Center_Employment_Forecast.pdf` (see §8.4 update).
+- **Nevada/Tesla normalisation (ra_0012):** the GOED 2014 legislative analysis (archived at
+  leg.state.nv.us, 28th Special Session, Exhibit B) confirms construction person-years and gives
+  the pro-forma denominator ($1.0B buildings + $3.95B equipment ≈ $4.95B initial investment) →
+  **1.87 construction job-years per $1M initial investment** (≈9.3/$M vs building capex alone).
+  Coded as a DERIVED value with both denominators stated.
+- **GlobalFoundries peak-vs-total (ra_0016):** confirmed via the Feb-2024 Commerce/GF CHIPS
+  announcements — 9,000 construction jobs are **cumulative over the multi-project program life**,
+  not a simultaneous peak. Recoded as `construction_jobs_total_project_life` and excluded from
+  peak-based cliff ratios.
+- **Faraday (ra_0017):** recoded to 140 direct cell-manufacturing jobs per GWh p.a. (180/GWh incl.
+  module/pack), operations phase, capacity denominator.
+
+### 9.2 Additions register
+`submission_00/evidence_additions_20260703/` holds two reviewed-schema CSVs:
+`comparator_additions_20260703.csv` (8 rows, review ids cmp_metric_0101–0108) and
+`data_centre_additions_20260703.csv` (2 derived jobs-per-dollar rows, dc_metric_0201–0202,
+source dc_hamm_2025). All rows carry ra_decision, page/table, verbatim quote, URL and caveats.
+
+### 9.3 Notebook changes (all logged in the notebooks themselves)
+- **06** — (a) reads the additions CSVs when present and appends them AFTER the base tables;
+  (b) `evidence_id` is now assigned globally after concatenation, reproducing the archived ids
+  (dc ev_0001–0084, comparator ev_0085–0106) exactly, with additions receiving ev_0107–ev_0116;
+  (c) one new metric-family rule (`cumulative construction jobs` → construction_jobs_headcount).
+- **07** — added the missing `job_years_per_mw` branch in the single-value unit assignment (the
+  two new wind employment factors otherwise fell into `other_numeric_context`).
+- **08** — unchanged; corrections register applies only to pre-existing evidence ids.
+- **10_redraw_figures_expanded_20260703.py** — reproducible figure script (replaces the
+  previously unscripted 2026-06-29 PNGs): Figure 1 per-MW with the two new wind comparators;
+  Figure 2 two panels — (a) per-MW cliff, (b) per-$1M comparison incl. the derived DC anchors.
+- **11_postprocess_submission_metadata_20260703.py** — re-applies the ev_0018/ev_0055/ev_0058
+  metadata fixes and submission-relative `source_raw_path` rewrites that
+  `_build_submission_00.py` had applied downstream of notebook 08.
+
+### 9.4 Rebuild + regression checks (all passed)
+- Base master rows (106) byte-identical to the archived pre-rebuild master (0 differing cells).
+- Base figure rows identical to the archived corrected figure dataset.
+- Corrected Table S1 base rows byte-identical to the co-author-reviewed 34-row file after
+  post-processing; new table = **44 rows / 20 sources** (`Table_S1_corrected_evidence_44rows.csv`).
+- Spot-check queue regenerated (44 rows); new rows ev_0107–ev_0116 remain `spotcheck_required`.
+- Superseded 2026-06-29 files preserved in `supplementary/_superseded_20260703/`.
+
+### 9.5 Manuscript v10
+`manuscript/manuscript_v10_evidence_integration_20260703.docx` — tracked changes (author
+"Claude", 2026-07-03): §3.3 replaced with the work-package campaign + triage + verification/
+integration paragraphs; §3.4 discovery-yield note; §3.6 counts 116/62; §3.7 corrected base
+44 rows/20 sources; §3.8 derived jobs-per-dollar metric + derivation paragraph; Table 1 counts
+updated and its note rewritten; Data-availability extended; §4.4 per-dollar findings paragraph +
+wind comparator sentence; new Figure 1 caption; Figure 2 caption rewritten; Limitations
+(source audit 44 rows; comparator coverage rewritten). Both embedded figures replaced with the
+2026-07-03 versions.
+
+### 9.6 Still open (QA gates before submission)
+1. Co-author spot-check of the 10 new rows (ev_0107–ev_0116) + Ania's 8 priority rows.
+2. Mazi's 10-row inter-coder reliability sample (report % agreement in §7).
+3. Warehousing and general-construction multiplier classes remain single-source (flagged).
+4. Update the GitHub mirror (`github_publish/`) with the rebuilt tables, figures and scripts.

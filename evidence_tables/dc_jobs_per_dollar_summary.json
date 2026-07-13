@@ -1,0 +1,42 @@
+{
+  "derivation_date": "2026-07-03T11:49:34",
+  "denominator_note": "Denominator is TOTAL project investment (includes IT/servers/power/land), NOT construction-only capex. Construction is typically ~40-55% of total DC project cost, so construction-jobs-per-construction-$ would be roughly 2x these values.",
+  "route1_direct": {
+    "construction_peak_workers_per_musd": {
+      "value": 0.5,
+      "n": 1,
+      "note": "Meta Richland Parish only source with a clean construction figure + capex."
+    },
+    "operations_jobs_per_musd": {
+      "min": 0.05,
+      "max": 0.167,
+      "median": 0.125,
+      "n": 3
+    },
+    "blended_jobs_per_musd": {
+      "value": 0.091,
+      "note": "Amazon Rainier; construction+operations not separated (secondary)."
+    }
+  },
+  "route2_mw_bridge": {
+    "capex_musd_per_mw": {
+      "min": 5.0,
+      "max": 6.67
+    },
+    "construction_peak_workers_per_musd_range": [
+      0.195,
+      0.72
+    ],
+    "central": 0.448,
+    "note": "(construction workers/MW) / (capex $M/MW). Agrees with Route 1 (~0.5 workers/$M)."
+  },
+  "headline": {
+    "dc_construction_peak_workers_per_ausd_musd": "~0.2-0.7 peak construction workers per $1M of total investment (central ~0.5)",
+    "dc_operations_jobs_per_musd": "~0.05-0.17 permanent jobs per $1M of total investment (central ~0.1)",
+    "per_dollar_employment_cliff": "~5x fewer permanent than peak-construction jobs per $ invested (consistent with the per-MW cliff)"
+  },
+  "comparator_context": {
+    "minnesota_construction_sector": "3.93 construction jobs per $1M of construction output (Minnesota LBO) \u2014 general construction is far more labour-intensive per $ than data-centre construction",
+    "interpretation": "A dollar invested in a data centre buys far fewer construction jobs than a dollar of general construction spending, because DC project cost is dominated by imported equipment (servers, power, cooling), not on-site labour."
+  }
+}
