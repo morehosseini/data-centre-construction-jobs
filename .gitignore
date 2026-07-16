@@ -35,7 +35,10 @@ _superseded/
 # Bulky / redundant artifacts (kept locally, not published)
 *.zip
 deep_search_outputs/
+deep_search_runs/
 source_pdfs/
+notebooks/
+methods/
 
 # Unsubmitted manuscript draft (excluded pre-submission)
 *.docx

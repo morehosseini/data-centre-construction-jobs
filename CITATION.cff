@@ -1,19 +1,16 @@
 cff-version: 1.2.0
-message: "If you use these materials, please cite the manuscript and repository."
-title: "Megawatts, but Few Permanent Jobs? An Agent-Assisted Evidence Review of the Data-Centre Construction Cliff — evidence and reproducibility repository"
+message: "If you use these materials, please cite the associated article when available."
+title: "Data-centre construction jobs — supplementary evidence tables and figures"
 authors:
   - family-names: "Hosseini"
     given-names: "M. Reza"
-    affiliation: "Faculty of Architecture, Building and Planning, The University of Melbourne"
 year: 2026
 type: dataset
-abstract: "Reproducibility materials for an agent-assisted evidence synthesis on data-centre construction and operational employment (facility-attributable), including a corrected 44-row evidence register (Table S1), quarantine log (Table S2), jobs-per-dollar derivation, and manuscript Figures 1–3."
+abstract: "Supplementary data (Tables S1–S2 and supporting files) and figures for an evidence synthesis on data-centre construction and operational employment."
 repository-code: "https://github.com/morehosseini/data-centre-construction-jobs"
 license: "all-rights-reserved"
 keywords:
   - data centres
   - construction employment
-  - employment cliff
   - evidence synthesis
-  - reproducibility
-  - MEP
+  - supplementary data

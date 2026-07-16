@@ -1,13 +1,2 @@
-# Universal Deep Search Agent — pinned from successful run_20260622_085057
-# Install once:  ./setup_env.sh   OR   pip install -r requirements.txt
-google-genai>=2.10.0,<3
-python-dotenv>=1.0.0
-bibtexparser>=1.4.0
-rispy>=0.9.0
-pypdf>=4.0.0
-requests>=2.31.0
-ipykernel>=6.29.0
-pandas>=2.0.0
-openpyxl>=3.1.0
+# Optional — only needed to regenerate Figures 2–3
 matplotlib>=3.8.0
-

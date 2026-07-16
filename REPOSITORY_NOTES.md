@@ -1,32 +1,21 @@
-# Repository Notes
+# Repository notes
 
-This is a pre-submission / submission-aligned reproducibility package. It intentionally excludes:
+Public package for **supplementary data and figures** only.
 
-- unsubmitted manuscript drafts;
-- third-party PDFs and full-text source files;
-- API keys, `.env` files, local environments, and local run folders;
-- superseded archive material and notebook backups (except figures archived under
-  `figures/_superseded_20260703/` for audit);
-- the agentic deep-search notebooks that call the paid Gemini API (the work-package
-  `WP_*.ipynb` notebooks and the two original `Deep_Search_*_FRESH.ipynb` notebooks) — these
-  are internal orchestration code, not needed to reproduce the analysed evidence base. Their
-  full outputs are preserved instead in `deep_search_runs/`, and the deterministic (no-API)
-  post-search triage notebook is published.
+## Included
 
-Notebook outputs have been cleared before publication to remove local machine
-paths and environment traces. The preserved run artifacts under
-`deep_search_runs/` are the auditable record of the completed discovery runs.
+- Corrected evidence register (Table S1) and quarantine log (Table S2)
+- Supporting evidence tables, jobs-per-dollar derivation, figure datasets
+- Manuscript Figures 1–3 and generation scripts for Figures 2–3
+- Bibliographic metadata for verified sources
+- Human spot-check queue / pass–fail log
 
-## Alignment with manuscript v24 (2026-07-16)
+## Excluded (by design)
 
-| Item | Status |
-|---|---|
-| Title | *Megawatts, but Few Permanent Jobs? An Agent-Assisted Evidence Review of the Data-Centre Construction Cliff* |
-| Evidence base | 44 corrected rows / 20 sources (Table S1); 10-row quarantine (Table S2) |
-| Spot-check | 34/44 rows (77%) complete in `ra_tasks/spotcheck/` |
-| Figure 1 | Procedure flowchart (`figures/Figure1_evidence_synthesis_procedure.*`) |
-| Figures 2–3 | v19 submission set + `fig2_generate.py` / `fig3_generate.py` |
-| Superseded figures | Old 2026-07-03 intensity/cliff PNGs under `figures/_superseded_20260703/` |
+- Manuscript drafts
+- Third-party PDFs / full-text source files
+- API keys and local environments
+- Search-agent code, prompts, notebooks, and raw discovery-run logs
+- Internal research-assistant triage workbooks beyond the spot-check folder
 
-The current licence is all rights reserved. Replace `LICENSE` and update
-`CITATION.cff` if a permissive licence or repository DOI is added later.
+Licence: all rights reserved (`LICENSE`).
