@@ -1,9 +1,29 @@
 # Reproducibility and Methods Supplement — full evidence pipeline
 
-**Paper:** *The hard hats behind the algorithm: construction-phase job creation by data centres*
+**Paper (current):** *Megawatts, but Few Permanent Jobs? An Agent-Assisted Evidence Review of the Data-Centre Construction Cliff*
 **Target journal:** ECAM (Harvard referencing)
 **Prepared:** 2026-07-03
-**Status:** internal working document — source for updating manuscript §3 and the Data-availability statement in v10
+**Last alignment pass:** 2026-07-17 (manuscript v24 / repository figure set v19)
+
+---
+
+> **Alignment banner (read first).** Historical sections below retain the original 2026-07-03
+> audit narrative (including references to intermediate manuscript versions and the pre-integration
+> 34-row base). **Authoritative submission numbers and figure map** are:
+>
+> | Item | Submission value |
+> |---|---|
+> | Corrected evidence base | **44 rows / 20 sources** (`evidence_tables/Table_S1_corrected_evidence_44rows.csv`) |
+> | Quarantine log | **10 rows** (`Table_S2_quarantine_log.csv`) |
+> | Spot-check | **34/44** complete (`ra_tasks/spotcheck/`) |
+> | **Figure 1** | Evidence-synthesis **procedure** flowchart (`figures/Figure1_evidence_synthesis_procedure.*`) |
+> | **Figure 2** | Employment intensity by evidence family (`figures/Figure2_employment_intensity_v19.*`, `fig2_generate.py`) |
+> | **Figure 3** | Employment cliff, per-MW and per-dollar (`figures/Figure3_employment_cliff_v19.*`, `fig3_generate.py`) |
+>
+> Older repo “Figure 1 / Figure 2” intensity/cliff PNGs (2026-07-03) are archived under
+> `figures/_superseded_20260703/` and must not be cited as the manuscript figures.
+> Work-package discovery remains a discovery/triage layer; analysed metrics are only those in
+> Table S1 after human correction.
 
 ---
 
@@ -11,15 +31,15 @@
 
 The task was to confirm that every procedure, model and notebook actually executed in this
 project is documented transparently enough for a top-journal reader to audit and re-run the
-evidence base. This supplement (a) audits what the current manuscript Methods (§3 of
-`manuscript_v09`) already covers, (b) identifies what it omits, (c) supplies ready-to-insert
-Methods text, and (d) provides a full notebook → inputs → outputs → run-ID reproducibility
-appendix.
+evidence base. This supplement (a) audits what intermediate manuscript Methods drafts already
+covered, (b) identifies what they omitted at the time of the 2026-07-03 audit, (c) supplies
+ready-to-insert Methods text, and (d) provides a full notebook → inputs → outputs → run-ID
+reproducibility appendix.
 
-**Headline finding of the audit.** The v09 Methods accurately documents the *original*
-two-stream deep search, the reference-verification and extraction pipeline, and the
-correction/QC pass that produced the corrected 34-row evidence base. It does **not** yet
-document two components that were built and executed after v09 was circulated:
+**Headline finding of the original audit (2026-07-03).** Intermediate Methods drafts accurately
+documented the *original* two-stream deep search, the reference-verification and extraction
+pipeline, and an earlier correction/QC pass that produced a **34-row** evidence base. They did
+**not** yet fully document two components that had been built and executed:
 
 1. the **work-package gap-search campaign** — seven Universal Deep Search Agent runs
    (notebooks 00–06) that targeted the specific comparator and jobs-per-dollar gaps set out
@@ -27,10 +47,11 @@ document two components that were built and executed after v09 was circulated:
 2. the **post-search triage layer** (notebook 07) that scores, de-duplicates and prioritises
    the ~2,000 harvested sources into research-assistant (RA) verification workbooks.
 
-These are currently a **documented source-discovery and triage layer**, not yet integrated
-into the corrected evidence table. The Methods should describe them as such — transparently
-scoped as leads awaiting primary-source verification — so the paper neither hides the work nor
-overclaims it as analysed evidence.
+**Current status (manuscript v24 / this repository):** those discovery layers are documented;
+selected July additions were integrated after human coding, producing the **44-row / 20-source**
+Table S1. Residual independent PDF spot-checks remain open for a minority of rows (see
+`ra_tasks/spotcheck/`). Discovery-only yields must still not be treated as the analysed
+evidence base.
 
 ---
 
@@ -63,7 +84,9 @@ PIPELINE 2 — EVIDENCE CODING & MANUSCRIPT OUTPUTS
   submission_00/notebooks/07 ..... prepare manuscript tables & figures
         │
         ▼
-  Corrected citable evidence (34 rows / 12 sources) + Figures 1–2 + Tables S1–S2
+  Corrected citable evidence (44 rows / 20 sources; was 34/12 before July integration)
+  + manuscript Figures 1–3 + Tables S1–S2
+  (submission Figs 2–3: figures/fig2_generate.py, figures/fig3_generate.py)
 ```
 
 A reader can reproduce the analysed evidence base from Pipeline 2 alone (it is self-contained
@@ -214,7 +237,7 @@ completeness but should feed the DC metric-review track, not the comparator tabl
 | `04_comparator_metric_extraction_and_review_workbook.ipynb` | Comparator metric extraction |
 | `05_data_centre_metric_review_and_RA_workbook.ipynb` | DC metric RA review |
 | `06_build_comparative_evidence_table.ipynb` | Build comparative evidence table |
-| `07_prepare_manuscript_tables_and_figures.ipynb` | Manuscript tables + Figures 1–2 |
+| `07_prepare_manuscript_tables_and_figures.ipynb` | Manuscript tables + figure datasets (older multi-panel pipeline; submission Figs 2–3 use `figures/fig2_generate.py` / `fig3_generate.py`) |
 | `08_correct_and_rebuild_manuscript_evidence_table.ipynb` | Correction pass → corrected 34-row base (§3.7) |
 
 Regeneration order for the manuscript outputs: **06 → 07 → 08** (06 builds the master evidence
@@ -359,9 +382,11 @@ source dc_hamm_2025). All rows carry ra_decision, page/table, verbatim quote, UR
 - **07** — added the missing `job_years_per_mw` branch in the single-value unit assignment (the
   two new wind employment factors otherwise fell into `other_numeric_context`).
 - **08** — unchanged; corrections register applies only to pre-existing evidence ids.
-- **10_redraw_figures_expanded_20260703.py** — reproducible figure script (replaces the
-  previously unscripted 2026-06-29 PNGs): Figure 1 per-MW with the two new wind comparators;
-  Figure 2 two panels — (a) per-MW cliff, (b) per-$1M comparison incl. the derived DC anchors.
+- **10_redraw_figures_expanded_20260703.py** — *historical* (2026-07-03) figure script under the
+  then-current numbering: “Figure 1” = per-MW intensity with wind comparators; “Figure 2” =
+  two-panel cliff + per-$1M. **Superseded for submission** by manuscript renumbering
+  (Figure 1 = procedure flowchart; Figures 2–3 = intensity and cliff) and the v19 scripts
+  `figures/fig2_generate.py` / `figures/fig3_generate.py`.
 - **11_postprocess_submission_metadata_20260703.py** — re-applies the ev_0018/ev_0055/ev_0058
   metadata fixes and submission-relative `source_raw_path` rewrites that
   `_build_submission_00.py` had applied downstream of notebook 08.
@@ -382,10 +407,21 @@ integration paragraphs; §3.4 discovery-yield note; §3.6 counts 116/62; §3.7 c
 updated and its note rewritten; Data-availability extended; §4.4 per-dollar findings paragraph +
 wind comparator sentence; new Figure 1 caption; Figure 2 caption rewritten; Limitations
 (source audit 44 rows; comparator coverage rewritten). Both embedded figures replaced with the
-2026-07-03 versions.
+2026-07-03 versions (later superseded — see §9.7).
 
 ### 9.6 Still open (QA gates before submission)
 1. Co-author spot-check of the 10 new rows (ev_0107–ev_0116) + Ania's 8 priority rows.
 2. Mazi's 10-row inter-coder reliability sample (report % agreement in §7).
 3. Warehousing and general-construction multiplier classes remain single-source (flagged).
-4. Update the GitHub mirror (`github_publish/`) with the rebuilt tables, figures and scripts.
+4. ~~Update the GitHub mirror with the rebuilt tables, figures and scripts.~~ **Done** for
+   manuscript v24 alignment (2026-07-17): Figures 1–3 + generation scripts + README/CITATION.
+
+### 9.7 Manuscript figure renumbering and v19 redraw (2026-07-16 submission set)
+By manuscript v24 the figures are:
+
+1. **Figure 1** — evidence-synthesis procedure flowchart (not a results chart).
+2. **Figure 2** — employment intensity by evidence family (`Figure2_employment_intensity_v19.*`).
+3. **Figure 3** — employment cliff, per-MW and scope-marked per-dollar (`Figure3_employment_cliff_v19.*`).
+
+Generation scripts: `figures/fig2_generate.py`, `figures/fig3_generate.py`. The 2026-07-03
+intensity/cliff PNGs are archived under `figures/_superseded_20260703/`.

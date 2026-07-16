@@ -1,8 +1,8 @@
 # Data-centre construction-phase job creation — evidence and reproducibility repository
 
-Replication and reproducibility materials for the study *The hard hats behind the algorithm:
-construction-phase job creation by data centres — a structured evidence synthesis with
-implications for Australia's build-out.*
+Replication and reproducibility materials for the study:
+
+> **Megawatts, but Few Permanent Jobs? An Agent-Assisted Evidence Review of the Data-Centre Construction Cliff**
 
 Corresponding author: **Dr M. Reza Hosseini**, Faculty of Architecture, Building and Planning,
 The University of Melbourne (`mreza.hosseini@unimelb.edu.au`). Co-authors to be confirmed at
@@ -10,10 +10,12 @@ submission. Target journal: *Engineering, Construction and Architectural Managem
 
 **Licence:** all rights reserved for pre-submission review. See `LICENSE`.
 
-**Status:** pre-submission. The work-package deep-search campaign and triage are a documented
-*source-discovery and triage layer*; comparator sources await research-assistant primary-source
-verification before entering the analysed evidence base. See `methods/` for the full pipeline
-description and honest limitations.
+**Status:** manuscript submission package (aligned with manuscript v24, 2026-07-16). The work-package
+deep-search campaign and triage are a documented *source-discovery and triage layer*. The analysed
+evidence base is a human-corrected register of **44 rows from 20 sources** (Table S1), including
+data-centre and comparator metrics; source-level spot-checking is complete for **34/44 rows (77%)**,
+with residual independent PDF confirmation pending for the July additions as labelled in the
+spot-check queue. See `methods/` for the full pipeline description and honest limitations.
 
 **Supplementary tables.** `evidence_tables/Table_S1_corrected_evidence_44rows.csv` and
 `evidence_tables/Table_S2_quarantine_log.csv` are Tables S1 and S2 referenced in the manuscript.
@@ -45,10 +47,12 @@ data-centre-construction-jobs/
 ├── evidence_tables/        Corrected 44-row evidence base (Table S1), quarantine log (Table S2),
 │                           corrections log, comparative tables, figure datasets, scale-context
 │                           table, and the jobs-per-dollar derivation inputs
-├── figures/                Figures 1–2 (PNG)
+├── figures/                Manuscript Figures 1–3 (PNG/PDF; Fig 2–3 also SVG/TIFF) + generation
+│                           scripts for Figs 2–3; superseded 2026-07-03 PNGs archived under
+│                           figures/_superseded_20260703/
 ├── references/             Verified source metadata (.bib / .ris / .csv)
 ├── requirements.txt        Python dependencies for notebook reruns
-├── CITATION.cff             Repository citation metadata
+├── CITATION.cff            Repository citation metadata
 └── LICENSE                 Pre-submission all-rights-reserved notice
 ```
 
@@ -62,6 +66,16 @@ environment, topic configuration, synthesis, QA report, verified-source list, da
 and search-audit log are curated in `deep_search_runs/`, and the deterministic post-search triage
 that turns those artifacts into the RA review workbooks (notebook 07) *is* published, since it
 makes no API calls. See `methods/deep_search_agent_README.md` for what the agent notebooks did.
+
+## Manuscript figure map (v24)
+
+| Manuscript | Repository files | Caption (short) |
+|---|---|---|
+| **Figure 1** | `figures/Figure1_evidence_synthesis_procedure.{png,pdf}` | Evidence-synthesis procedure |
+| **Figure 2** | `figures/Figure2_employment_intensity_v19.*` + `fig2_generate.py` | Employment intensity per MW by evidence family |
+| **Figure 3** | `figures/Figure3_employment_cliff_v19.*` + `fig3_generate.py` | Employment cliff (per-MW and per-dollar descriptors) |
+
+See `figures/README.md` for regeneration instructions and the note on superseded 2026-07-03 files.
 
 ## The two pipelines
 
@@ -85,12 +99,15 @@ phase, denominator, direct-vs-total definition, page/table and a verbatim quote.
 **Pipeline 2 — evidence coding and manuscript outputs.** Full-text extraction, metric mining,
 structured review, and an explicit correction pass (dedupe / quarantine / reclassify) yielding a
 corrected, citable base of **44 rows from 20 sources** (Table S1), a 10-row quarantine log
-(Table S2), normalised effect measures and Figures 1–2. Regeneration order: `06 → 07 → 08` (06
-builds the master evidence table from reviewed inputs, 07 turns it into manuscript table/figure
-files, 08 applies the corrections register in place).
+(Table S2), normalised effect measures, and manuscript **Figures 1–3**. Table/dataset regeneration
+order: `06 → 07 → 08` (06 builds the master evidence table from reviewed inputs, 07 turns it into
+manuscript table/figure files, 08 applies the corrections register in place). **Submission
+Figures 2–3** are regenerated with `figures/fig2_generate.py` and `figures/fig3_generate.py`
+(values from manuscript Table 2 / sections 4.4 and 5).
 
 Full detail, exact counts and ready-to-cite methods text:
-`methods/REPRODUCIBILITY_pipeline_and_methods_supplement_v01_20260703.md`.
+`methods/REPRODUCIBILITY_pipeline_and_methods_supplement_v01_20260703.md`
+(see the alignment banner at the top of that file for manuscript v24 figure numbering and counts).
 
 ## Reproducing
 
@@ -98,12 +115,13 @@ Deep-search runs require a paid Gemini API key and are locked to dated run IDs; 
 re-run to reproduce results, and the notebooks that ran them are not published here (see above).
 The analysed evidence base is reproducible from Pipeline 2, which is self-contained from the
 retrieved source pack. The triage step (notebook 07) is fully reproducible offline from the
-artifacts in `deep_search_runs/`.
-
-Install the notebook dependencies with:
+artifacts in `deep_search_runs/`. Submission Figures 2–3:
 
 ```bash
 pip install -r requirements.txt
+cd figures
+python3 fig2_generate.py
+python3 fig3_generate.py
 ```
 
 ## Data and copyright note
@@ -116,6 +134,6 @@ DOIs/URLs in `references/` and `deep_search_runs/*/verified_sources.csv`.
 
 ## Citation
 
-Hosseini, M. R., et al. (2026). *The hard hats behind the algorithm: construction-phase job
-creation by data centres.* Manuscript in preparation. Repository DOI to be minted at submission.
-See `CITATION.cff` for repository citation metadata.
+Hosseini, M. R., et al. (2026). *Megawatts, but Few Permanent Jobs? An Agent-Assisted Evidence
+Review of the Data-Centre Construction Cliff.* Manuscript in preparation. Repository DOI to be
+minted at submission. See `CITATION.cff` for repository citation metadata.

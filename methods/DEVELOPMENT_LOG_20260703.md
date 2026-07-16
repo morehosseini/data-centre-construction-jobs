@@ -108,3 +108,13 @@ rebuild via 08 → figures via 07. Flag warehousing + DC-per-$ as remaining limi
    figures replaced. Methods supplement §9 records the full integration.
 7. **Remaining QA gates:** co-author spot-check of ev_0107–ev_0116 (+ Ania's priority rows);
    Mazi's 10-row inter-coder sample; GitHub mirror refresh.
+
+## 2026-07-17 — repository alignment with manuscript v24
+- Replaced published figures with manuscript submission set:
+  - Figure 1: evidence-synthesis procedure flowchart
+  - Figures 2–3: v19 employment intensity + employment cliff (PDF/SVG/PNG/TIFF)
+- Added `figures/fig2_generate.py` and `figures/fig3_generate.py` (source of record for MS Figs 2–3).
+- Archived 2026-07-03 intensity/cliff PNGs under `figures/_superseded_20260703/`.
+- Updated README, CITATION.cff, REPOSITORY_NOTES, figures/README, and REPRODUCIBILITY supplement
+  banner to current title, 44/20 counts, 34/44 spot-check status, and Figures 1–3 map.
+- Verified Figure 1 PNG and Figures 2–3 TIFF SHA-256 hashes match `manuscript_v24_20260716.docx` media.
