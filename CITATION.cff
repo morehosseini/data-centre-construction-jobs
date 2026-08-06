@@ -4,6 +4,20 @@ title: "Data-centre construction jobs — supplementary evidence tables and figu
 authors:
   - family-names: "Hosseini"
     given-names: "M. Reza"
+    affiliation: "Faculty of Architecture, Building and Planning, The University of Melbourne"
+    orcid: "https://orcid.org/0000-0001-8675-736X"
+  - family-names: "Erfani"
+    given-names: "Abdolmajid"
+    affiliation: "Department of Civil, Environmental, and Geospatial Engineering, Michigan Technological University"
+    orcid: "https://orcid.org/0000-0002-4703-1248"
+  - family-names: "Khodabakhshian"
+    given-names: "Ania"
+    affiliation: "Department of Architecture, Built Environment and Construction Engineering, Politecnico di Milano"
+    orcid: "https://orcid.org/0000-0001-5392-5750"
+  - family-names: "Rahimian"
+    given-names: "Farzad"
+    affiliation: "School of Architecture, Building and Civil Engineering, Loughborough University"
+    orcid: "https://orcid.org/0000-0001-7443-4723"
 year: 2026
 type: dataset
 abstract: "Supplementary data (Tables S1–S2 and supporting files) and figures for an evidence synthesis on data-centre construction and operational employment."
